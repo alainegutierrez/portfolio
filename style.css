@@ -1,0 +1,856 @@
+body {
+  font-family: 'Poppins', serif;
+  background-color: white;
+  color: black;
+  transition: ease-in-out all .6s;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.yellow-font {
+  color: #FFA804;
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li{
+  margin: 0;
+  padding: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  width: 50px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* reusable css */
+
+.main-title {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  /* top: 50px; */
+  margin-bottom: 30px;
+}
+
+.main-title .title .line-about {
+  display: block;
+  height: 8px;
+  width: 100px;
+  background-color: #FFA804;
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  transition: ease-in-out all .3s;
+}
+
+.main-title .title h3 {
+  padding-right: 30px;
+  font-size: 35px;
+  text-align: left;
+  transition: ease-in-out all .3s;
+}
+
+.main-title .title p {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #999;
+  text-align: left;
+}
+
+/* navbar */ 
+.main-navbar .wrapper .navbar {
+  -webkit-box-shadow: 1px 1px 15px 0px rgb(123 123 123 / 5);
+  box-shadow: 1px 1px 15px 0px rgb(123 123 123 / 5);
+  background-color: #fffffff0;
+}
+
+.main-navbar .wrapper .main-menu .navbar-brand {
+  display: block;
+  margin: 0;
+  max-width: 220px;
+  padding: 0px 10px;
+}
+
+.main-navbar .wrapper .main-menu .navbar-brand img{
+  max-width: 100%;
+}
+
+.main-navbar .wrapper .main-menu .navbar-nav .nav-item .nav-link{
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+}
+
+.main-navbar .wrapper .main-menu .navbar-nav .nav-item:nth-child(6) {
+  margin-top: 10px;
+} 
+
+.main-navbar .wrapper .main-menu .navbar-nav .nav-item .nav-link:hover{
+  color: #FFA804;
+}
+
+.main-navbar .wrapper .navbar-light .navbar-toggler .hamburger {
+  color: #212529;
+  font-size: 30px;
+}
+
+.main-navbar .wrapper .navbar-light .navbar-toggler {
+  border: none;
+}
+
+.main-navbar .wrapper .navbar-light .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* main-profile */
+.main-profile {
+  padding-top: 300px;
+  position: relative;
+  background: url("assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main-profile::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 155px;
+  z-index: 1;
+  transition: ease-in-out all .6s;
+}
+.main-profile .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-profile .profile .white-bg  {
+  background-color: #fff;
+  text-align: center;
+  max-width: 715px;
+  z-index: 3;
+  transition: ease-in-out all .6s;
+}
+
+.main-profile .profile .white-bg .profile-desc .img-holder {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 200px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+  margin-bottom: -80px;
+}
+
+.main-profile .profile .white-bg .profile-desc .img-holder img {
+  width: 100%;
+}
+
+.main-profile .profile .white-bg .profile-desc h2 {
+  font-size: 40px;
+}
+
+.main-profile .profile .white-bg .profile-desc p {
+  font-size: 25px;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-details {
+  margin: 20px 0;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-details li {
+  font-size: 17px;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-details ul li a {
+  text-decoration: none;
+  color: #000;
+  transition: ease-in-out all .6s;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-socmed li {
+  display: inline-block;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-socmed a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 0px 10px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #454a52;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: ease .3s;
+}
+
+.main-profile .profile .white-bg .profile-desc .profile-socmed a:hover {
+  background-color: #FFA804;
+} 
+
+/* About Me */
+
+.about-me {
+  padding: 100px 0 165px 0;
+}
+
+.gray-angle {
+  position: relative;
+  z-index: 1;
+}
+
+.gray-angle:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 5vw solid transparent;
+  border-left: 100vw solid #101113;
+}
+
+.about-me .row .about-me-skills {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+ 
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+.about-me .row .about-me-skills .img-holder {
+  margin: 10px 18px;
+}
+
+/* work-experience */
+.main-work-experience {
+  padding: 40px 0 100px 0;
+  background-color: #101113;
+  color: #efefef;
+}
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title {
+  margin-bottom: 30px;
+}
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title .work-position {
+  font-size: 24px;
+  font-weight: 500;
+  color: #efefef;
+  letter-spacing: 1px;
+}
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title .work-company {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFA804;
+  letter-spacing: 1px;
+}
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title .work-year {
+  font-size: 14px;
+  font-weight: 600;
+  color: #efefef;
+  letter-spacing: 1px;
+}
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title  .work-description {
+  font-size: 17px;
+  max-width: 100%;
+  padding: 20px 0;
+} 
+
+.main-work-experience .row .work-experience-skills .wrapper .job-title .work-list  {
+  list-style: circle ;
+  padding-left: 18px;
+}
+
+.white-angle {
+  position: relative;
+}
+
+.white-angle:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: unset;
+  right: 0;
+  left: unset;
+  bottom: 0;
+  border-top: 5vw solid transparent;
+  border-left: 100vw solid #fff;
+  transition: ease-in-out all .6s;
+}
+
+/* main-services */
+
+.main-services {
+  padding: 100px 0 165px 0;
+}
+
+.main-services .services-offered .row {
+  padding-bottom: 40px;
+  margin: 0;
+}
+
+.main-services .services-offered .wrapper {
+  margin-top: 10px;
+  padding: 20px 10px;
+  transition: ease-in-out all .35s;
+  transform: scale(1);
+}
+
+.main-services .services-offered .wrapper i {
+  font-size: 55px;
+  padding: 15px 0;
+  color: #FFA804;
+  transition: ease-in-out all .1s;
+}
+
+.main-services .services-offered .wrapper h4 {
+  font-size: 20px;
+  transition: ease-in-out all .1s;
+}
+
+.main-services .services-offered .wrapper p {
+  font-size: 16px;
+  transition: ease-in-out all .1s;
+}
+
+.main-services .services-offered .wrapper:hover {
+  /* background-color: #212529; */
+  box-shadow: 0 0 40px 0 rgb(0 0 0 / 15%);
+}
+
+/* main-portfolio */
+.main-portfolio .main-title,
+.main-portfolio .portfolio-group,
+.main-portfolio .portfolio-info {
+  margin-bottom: 70px;
+}
+
+
+.main-portfolio .portfolio-group .img-holder img {
+  width: 100%;
+}
+
+.main-portfolio .portfolio-group .img-holder {
+  position: relative;
+}
+
+.main-portfolio .portfolio-group .img-holder .pc-view {
+  transition: ease-in-out all .6s;
+}
+
+.main-portfolio .portfolio-group .img-holder .front-view {
+  width: 83%;
+  margin: 0 auto;
+  display: block;
+}
+
+.main-portfolio .portfolio-group .img-holder .pc-view-two,
+.main-portfolio .portfolio-group .img-holder .laptop-view,
+.main-portfolio .portfolio-group .img-holder .ipad-view,
+.main-portfolio .portfolio-group .img-holder .iphone-view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  transition: ease-in-out all .6s;
+}
+
+.main-portfolio .portfolio-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.main-portfolio .portfolio-info .portfolio-title h3 {
+  font-weight: 600px;
+  font-size: 35px;
+  transition: ease-in-out all .3s;
+}
+
+.main-portfolio .portfolio-info .portfolio-title span {
+  display: block;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #FFA804;
+  width: 45px;
+  height: 17px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 8px;
+  transition: ease-in-out all .3s;
+}
+
+.main-portfolio .portfolio-info .portfolio-desc p {
+  font-size: 16px;
+  transition: ease-in-out all .3s;
+}
+
+.modal-body img {
+  width: 100%;
+}
+
+.modal-header {
+  border: none;
+  display: none;
+}
+
+.main-portfolio .portfolio-info .portfolio-btn .btn-primary {
+  background-color: #454a52;
+}
+
+.main-portfolio .portfolio-info .portfolio-btn a {
+  border: 1px solid #fff;
+  
+  font-size: 13px;
+  margin-right: 10px;
+  border-radius: 20px;
+  transition: ease-in-out all .4s;
+}
+
+.main-portfolio .portfolio-info .portfolio-btn .btn-default {
+  border-color: #454a52;
+}
+
+.main-portfolio .portfolio-info .portfolio-btn a:hover {
+  background-color: #FFA804;
+  border-color: #FFA804;
+}
+
+/* Main-Contact */
+
+.main-contact {
+  padding: 100px 0;
+}
+
+.main-contact .form-message textarea {
+  resize: none;
+  height: 224px;
+}
+
+/* footer */
+.footer-section {
+  background-color: #212529;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #efefef;
+  font-size: 14px;
+}
+.form-floating>label {
+  transition: ease-in-out all .6s;
+}
+
+@media (max-width:1199px) {
+
+  .main-title .title h3 {
+    font-size: 30px;
+  }
+
+  .main-title .title .line-about {
+    width: 90px;
+  }
+
+  .main-title .title p {
+    font-size: 12px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .img-holder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc h2 {
+    font-size:35px;
+  }
+  
+  .main-profile .profile .white-bg .profile-desc p {
+    font-size: 22px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-position {
+    font-size: 22px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-company {
+    font-size: 14px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-year {
+    font-size: 13px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-description {
+    font-size: 16px;
+  }
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-list li {
+    font-size: 15px;
+  }
+
+  .main-portfolio .portfolio-info {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .profile-details li {
+    font-size: 16px;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .pc-view {
+    display: none;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .laptop-view {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  
+  .main-portfolio .portfolio-info .portfolio-title h3 {
+    font-size: 25px;
+  }
+
+  .main-portfolio .portfolio-info .portfolio-title span {
+    margin-top: 6px;
+  }
+
+  .main-portfolio .portfolio-info .portfolio-desc p {
+    font-size: 14px;
+  }
+
+  .main-portfolio .portfolio-info .portfolio-btn a {
+    font-size: 13px;
+  }
+  
+}
+
+@media (max-width:991px) {
+  .main-profile .profile .white-bg {
+    max-width: 500px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .img-holder {
+    width: 150px;
+    height: 150px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc h2 {
+    font-size: 30px;
+  }
+  .main-profile .profile .white-bg .profile-desc p {
+    font-size: 20px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .profile-details {
+    margin: 15px 0;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .profile-details li {
+    font-size: 15px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .profile-socmed a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .main-portfolio .portfolio-info {
+    padding: 30px 20px;
+  }
+  .main-portfolio .portfolio-group .img-holder .laptop-view {
+    display: none;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .ipad-view {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  
+}
+
+
+@media (max-width:767px) {
+
+  .main-portfolio .portfolio-info {
+    padding: 20px 30px;
+  }
+  .main-portfolio .portfolio-group .img-holder .laptop-view {
+    display: none;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .ipad-view {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .main-portfolio .portfolio-info .portfolio-btn .btn-primary {
+    margin-bottom: 0px;
+  }
+  
+  .main-portfolio .main-title, .main-portfolio .portfolio-group, .main-portfolio .portfolio-info {
+    margin-bottom: 30px;
+  }
+}
+
+
+@media (max-width:575px) {
+
+  .main-title .title h3 {
+    font-size: 25px;
+  }
+
+  .main-title .title .line-about {
+    width: 70px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc .img-holder {
+    width: 130px;
+    height: 130px;
+  }
+
+  .main-title .title p {
+    font-size: 11px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc h2 {
+    font-size: 25px;
+  }
+
+  .main-profile .profile .white-bg .profile-desc p {
+    font-size: 18px;
+  }
+
+  .main-services .services-offered .wrapper p {
+    font-size: 14px;
+  }
+
+
+  .main-profile .profile .white-bg .profile-desc .profile-details li {
+    font-size: 14px;
+  }
+
+  .about-me .row .about-me-skills p {
+    font-size: 15px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-position {
+    font-size: 20px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-company {
+    font-size: 12px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-year {
+    font-size: 11px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-description {
+    font-size: 14px;
+  }
+
+  .main-work-experience .row .work-experience-skills .wrapper .job-title .work-list li {
+    font-size: 13px;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .ipad-view {
+    display: none;
+  }
+
+  .main-portfolio .portfolio-group .img-holder .iphone-view {
+    display: block;
+    width: 50%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  
+  
+}
+
+.dark-mode,
+.dark-mode .main-profile .profile .white-bg,
+.dark-mode .main-profile::after
+{
+  background-color: #101113;
+  color: #fff;
+  transition: ease-in-out all .6s;
+}
+
+.dark-mode .main-profile .profile .white-bg .profile-desc .profile-details ul li a {
+  color: #fff;
+}
+
+.dark-mode .main-work-experience {
+  background-color: #212327;
+}
+
+.dark-mode  .white-angle:after {
+  border-left: 100vw solid #101113;
+}
+
+.dark-mode .gray-angle:after {
+ border-left: 100vw solid #212327;
+}
+
+.dark-mode .main-services .services-offered .wrapper:hover {
+  box-shadow: 0 0 10px 0 rgb(255 255 255 / 8%);
+}
+
+.dark-mode .main-portfolio .portfolio-info .portfolio-btn .btn-default {
+  background-color: #fff;
+}
+
+.dark-mode .main-portfolio .portfolio-info .portfolio-btn .btn-default:hover {
+  background-color: #FFA804;
+}
+
+.dark-mode .form-floating>label {
+  color: #000;
+}
+
+.dark-mode .footer-section {
+  box-shadow: 0 0 12px 0 rgb(255 255 255 / 5%);
+}
+
+.dark-mode .main-portfolio .portfolio-info .portfolio-btn .modal-body {
+  background-color: #212327;
+}
+
+.dark-mode .main-portfolio .portfolio-info .portfolio-btn .modal-header {
+  background-color: #212327;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-bg-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  pointer-events: none;
+}
+
+.modal-mac {
+  display: flex;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.modal-dialog-scrollable .modal-content {
+  top: -60px;
+  max-height: 60%;
+}
+  
